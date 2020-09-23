@@ -44,4 +44,14 @@ function Acerto(letra)
 function Erro()
 {
     numeroDeErros += 1;
+
+    if(numeroDeErros == 6)
+    {
+        Perdeu();
+    }
+}
+
+function Perdeu()
+{
+    alert("VOCÊ SUCUMBIU NA FORCA")
 }
