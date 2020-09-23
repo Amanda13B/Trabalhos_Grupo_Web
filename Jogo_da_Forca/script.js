@@ -2,34 +2,41 @@ let palavra = ["d", "e", "s", "e", "r", "t", "o"]
 
 let numeroDeErros = 0;
 
+let podeJogar = true;
+
 function ChuteDeLetra(letraEscolhida)
 {
-    let acertos = 0;
-
-    //Checar se a letra escolhida aparece na paalvra secreta
-    for(i = 0; i <= palavra.length; i++)
+    //Só funciona o teste de letra se você ainda pode jogar = não perdeu
+    if(podeJogar)
     {
-        //Se a letra escolhida for igual, da um acerto e coloca a letra
-        if(letraEscolhida == palavra[i])
-        {
-            acertos += 1;
+        let acertos = 0;
 
-            Acerto(letraEscolhida);
-        }
-
-        //Ao fim da palavra, se não tiver nenhum acerto, realizar um Erro de penalidade
-        if(i == palavra.length)
+        //Checar se a letra escolhida aparece na paalvra secreta
+        for(i = 0; i <= palavra.length; i++)
         {
-            if(acertos == 0)
+            //Se a letra escolhida for igual, da um acerto e coloca a letra
+            if(letraEscolhida == palavra[i])
             {
-                let imagemForca = document.getElementById("nome do id da imagem da forca")
+                acertos += 1;
 
-                Erro();
+                Acerto(letraEscolhida);
+            }
 
-                imagemForca = "local/da/imagem" + numeroDeErros.toString() + ".png"
+            //Ao fim da palavra, se não tiver nenhum acerto, realizar um Erro de penalidade
+            if(i == palavra.length)
+            {
+                if(acertos == 0)
+                {
+                    let imagemForca = document.getElementById("nome do id da imagem da forca")
+
+                    Erro();
+
+                    imagemForca = "Imagens/boneco" + numeroDeErros.toString() + ".png"
+                }
             }
         }
-    }
+
+    }   
 }
 
 //Funcao que irá colocar a letra correta na caixa
@@ -53,5 +60,7 @@ function Erro()
 
 function Perdeu()
 {
+    podeJogar = false;
+
     alert("VOCÊ SUCUMBIU NA FORCA")
 }
