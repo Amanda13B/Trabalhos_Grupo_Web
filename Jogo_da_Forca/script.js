@@ -27,11 +27,7 @@ function ChuteDeLetra(letraEscolhida)
             {
                 if(acertos == 0)
                 {
-                    let imagemForca = document.getElementById("nome do id da imagem da forca")
-
                     Erro();
-
-                    imagemForca = "Imagens/boneco" + numeroDeErros.toString() + ".png"
                 }
             }
         }
@@ -50,8 +46,13 @@ function Acerto(letra)
 //Funcao que irá adicionar um membro ao homem palito, checando se chegou no limite
 function Erro()
 {
+    let imagemForca = document.getElementById("nome do id da imagem da forca")
+
     numeroDeErros += 1;
 
+    imagemForca = "Imagens/boneco" + numeroDeErros.toString() + ".png"
+
+    //Caso o jogador chegue no limite de erros e veja o seu fim, ele perde
     if(numeroDeErros == 6)
     {
         Perdeu();
@@ -60,6 +61,7 @@ function Erro()
 
 function Perdeu()
 {
+    //Nào deixa o jogador chutar letras mais ao fazer a bool ficar falsa
     podeJogar = false;
 
     alert("VOCÊ SUCUMBIU NA FORCA")
