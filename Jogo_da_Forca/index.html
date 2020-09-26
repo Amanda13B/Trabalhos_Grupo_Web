@@ -4,6 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="./bootstrap-4.5.2-dist/css/bootstrap.min.css">
+        <script type="text/javascript" src="./bootstrap-4.5.2-dist/js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="./bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="./CSS/styles.css">
         <title>Jogo da Forca</title>
     </head>
@@ -12,23 +17,52 @@
             <h1 class="titulo">Jogo da Forca</h1>
         </header>
 
-        <div class="area-imagem">
-            <img class="imagem-forca" id="forca" src="./Imagens/boneco0.png">
-        </div>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="secao-imagem">
+                        <img class="imagem-forca" id="forca" src="./Imagens/boneco0.png">
+                    </div>
+                </div>
+        
+                <div class="col-md-7">
+                    <div class="secao-dica">
+                        <h3>Dica:</h3>
+                        <p>Calor</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="secao-dica">
-            <h3>Dica:</h3>
-            <p>Calor</p>
-        </div>
+            <div class="row justify-content-center secao-letras-palavra">
+                <div class="col-1">
+                    <div class="caixa-letra"><!--D--> <p class="align-middle" id="letra0">_</p> </div>
+                </div>
 
-        <div class="secao-letras-palavra">
-            <div class="caixa-letra"><!--D--> <p>D</p> </div>
-            <div class="caixa-letra"><!--E--> <p>E</p> </div>
-            <div class="caixa-letra"><!--S--> <p>S</p> </div>
-            <div class="caixa-letra"><!--E--> <p>E</p> </div>
-            <div class="caixa-letra"><!--R--> <p>R</p> </div>
-            <div class="caixa-letra"><!--T--> <p>T</p> </div>
-            <div class="caixa-letra"><!--O--> <p>O</p> </div>
+                <div class="col-1">
+                    <div class="caixa-letra"><!--E--> <p class="align-middle" id="letra1">_</p> </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="caixa-letra"><!--S--> <p class="align-middle" id="letra2">_</p> </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="caixa-letra"><!--E--> <p class="align-middle" id="letra3">_</p> </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="caixa-letra"><!--R--> <p class="align-middle" id="letra4">_</p> </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="caixa-letra"><!--T--> <p class="align-middle" id="letra5">_</p> </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="caixa-letra"><!--O--> <p class="align-middle" id="letra6">_</p> </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="instrucao">
@@ -38,7 +72,7 @@
         <div class="teclado-virtual">
 
             <div class="linha-teclado">
-                <div class="botao-letra">Q</div>
+                <div class="botao-letra"> Q</div> <!--onClick ="metodo()"-->
                 <div class="botao-letra">W</div>
                 <div class="botao-letra">E</div>
                 <div class="botao-letra">R</div>
@@ -74,5 +108,17 @@
                 <div class="botao-letra">M</div>
             </div>
         </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
     </body>
 </html>
