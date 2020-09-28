@@ -1,6 +1,7 @@
 let palavra = ["D", "E", "S", "E", "R", "T", "O"]
 
 let numeroDeErros = 0;
+let numeroDeAcertos = 0;
 
 let podeJogar = true;
 
@@ -39,9 +40,19 @@ function ChuteDeLetra(letraEscolhida)
 //Funcao que irá colocar a letra correta na caixa
 function Acerto(letra, posicao)
 {
-    let posicaoAtualDoAcerto = document.getElementById("letra" + posicao)
+    if(document.getElementById("letra" + posicao).textContent == "_")
+    {
+        numeroDeAcertos += 1;
 
-    posicaoAtualDoAcerto.textContent = letra.toString();
+        let posicaoAtualDoAcerto = document.getElementById("letra" + posicao)
+
+        posicaoAtualDoAcerto.textContent = letra.toString();
+    }
+
+    if(numeroDeAcertos == 7)
+    {
+        Ganhou();
+    }
 }
 
 //Funcao que irá adicionar um membro ao homem palito, checando se chegou no limite
@@ -66,4 +77,11 @@ function Perdeu()
     podeJogar = false;
 
     alert("VOCÊ SUCUMBIU NA FORCA")
+}
+
+function Ganhou()
+{
+    podeJogar = false;
+
+    alert("VOCÊ DESCOBRIU A PALAVRA!")
 }
