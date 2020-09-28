@@ -23,10 +23,11 @@ function ChuteDeLetra(letraEscolhida)
             }
 
             //Ao fim da palavra, se não tiver nenhum acerto, realizar um Erro de penalidade
-            if(i == palavra.length)
+            if(i == palavra.length - 1)
             {
                 if(acertos == 0)
                 {
+                    alert("erro");
                     Erro();
                 }
             }
@@ -50,7 +51,7 @@ function Erro()
 
     numeroDeErros += 1;
 
-    imagemForca = "Imagens/boneco" + numeroDeErros.toString() + ".png"
+    imagemForca.src = "Imagens/boneco" + numeroDeErros.toString() + ".png"
 
     //Caso o jogador chegue no limite de erros e veja o seu fim, ele perde
     if(numeroDeErros == 6)
