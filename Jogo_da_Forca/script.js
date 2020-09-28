@@ -12,14 +12,14 @@ function ChuteDeLetra(letraEscolhida)
         let acertos = 0;
 
         //Checar se a letra escolhida aparece na paalvra secreta
-        for(i = 0; i <= palavra.length; i++)
+        for(i = 0; i < palavra.length; i++)
         {
             //Se a letra escolhida for igual, da um acerto e coloca a letra
             if(letraEscolhida == palavra[i])
             {
                 acertos += 1;
 
-                Acerto(letraEscolhida);
+                Acerto(letraEscolhida, i);
             }
 
             //Ao fim da palavra, se não tiver nenhum acerto, realizar um Erro de penalidade
@@ -36,9 +36,9 @@ function ChuteDeLetra(letraEscolhida)
 }
 
 //Funcao que irá colocar a letra correta na caixa
-function Acerto(letra)
+function Acerto(letra, posicao)
 {
-    let posicaoAtualDoAcerto = document.getElementById("id da posicao")
+    let posicaoAtualDoAcerto = document.getElementById("letra" + posicao)
 
     posicaoAtualDoAcerto.textContent = letra.toString();
 }
@@ -46,7 +46,7 @@ function Acerto(letra)
 //Funcao que irá adicionar um membro ao homem palito, checando se chegou no limite
 function Erro()
 {
-    let imagemForca = document.getElementById("nome do id da imagem da forca")
+    let imagemForca = document.getElementById("forca")
 
     numeroDeErros += 1;
 
