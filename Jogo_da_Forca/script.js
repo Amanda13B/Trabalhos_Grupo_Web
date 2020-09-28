@@ -28,7 +28,7 @@ function ChuteDeLetra(letraEscolhida)
             {
                 if(acertos == 0)
                 {
-                    alert("erro");
+                    alert("Você errou a letra!");
                     Erro();
                 }
             }
