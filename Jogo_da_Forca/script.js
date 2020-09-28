@@ -1,4 +1,4 @@
-let palavra = ["d", "e", "s", "e", "r", "t", "o"]
+let palavra = ["D", "E", "S", "E", "R", "T", "O"]
 
 let numeroDeErros = 0;
 
