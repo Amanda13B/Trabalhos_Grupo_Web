@@ -42,3 +42,7 @@ span{
     height: 15vh;
     padding: 20px;
 }
+
+img{
+    height: 100%;
+}
