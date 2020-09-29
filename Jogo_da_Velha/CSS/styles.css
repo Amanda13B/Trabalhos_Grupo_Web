@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    margin: 5vh 0;
+    font-size: 2.3em;
+}
+
+.mostra-nome-jogador{
+    margin: 5vh 0;
+}
+
+.mostra-nome-jogador h4{
+    font-size: 1.5em;
+}
+
+span{
+    color: rgb(34, 34, 134);
+}
+
+.tabuleiro{
+    background-color: rgb(119, 166, 253);
+    border: 4px solid rgb(65, 11, 126);
+    width: fit-content;
+    margin: 5vh auto;
+}
+
+.linha{
+    border-bottom: 2px solid rgb(65, 11, 126);
+}
+
+.casa-tabuleiro{
+    display: inline-block;
+    border-right: 2px solid rgb(65, 11, 126);
+    line-height: 15vh;
+    height: 15vh;
+    padding: 20px;
+}
