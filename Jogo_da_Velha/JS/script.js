@@ -113,8 +113,7 @@ function Jogada(numeroDaCasa)
             arrayCasas.push(numeroDaCasa);
         }    
 
-        alert(arrayCasas + " " + casaRepetida);
-
+        //Caso não seja repetida a casa escolhida
         if(casaRepetida == false)
         {
             textoJogadorAtual = document.getElementById("nome-jogador-atual");
@@ -131,13 +130,13 @@ function Jogada(numeroDaCasa)
                 if(JogadorAtual == 1)
                 {
                     JogadorAtual == 2;
-
+                    alert(JogadorAtual + " Virou jogador 2")
                     textoJogadorAtual.innerHTML = nomeSegundoJogador;
                 }
                 else if(JogadorAtual == 2)
                 {
                     JogadorAtual == 1;
-
+                    alert(JogadorAtual  + " Virou jogador 1")
                     textoJogadorAtual.innerHTML = nomePrimeiroJogador;
                 }
             }
@@ -152,13 +151,13 @@ function Jogada(numeroDaCasa)
                 if(JogadorAtual == 1)
                 {
                     JogadorAtual == 2;
-
+                    alert(JogadorAtual + " Virou jogador 2")
                     textoJogadorAtual.innerHTML = nomeSegundoJogador;
                 }
                 else if(JogadorAtual == 2)
                 {
                     JogadorAtual == 1;
-
+                    alert(JogadorAtual + " Virou jogador 1")
                     textoJogadorAtual.innerHTML = nomePrimeiroJogador;
                 }
             }
