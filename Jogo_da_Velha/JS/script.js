@@ -129,14 +129,14 @@ function Jogada(numeroDaCasa)
 
                 if(JogadorAtual == 1)
                 {
-                    JogadorAtual == 2;
-                    alert(JogadorAtual + " Virou jogador 2")
+                    JogadorAtual = 2;
+                    
                     textoJogadorAtual.innerHTML = nomeSegundoJogador;
                 }
                 else if(JogadorAtual == 2)
                 {
-                    JogadorAtual == 1;
-                    alert(JogadorAtual  + " Virou jogador 1")
+                    JogadorAtual = 1;
+
                     textoJogadorAtual.innerHTML = nomePrimeiroJogador;
                 }
             }
@@ -150,14 +150,14 @@ function Jogada(numeroDaCasa)
 
                 if(JogadorAtual == 1)
                 {
-                    JogadorAtual == 2;
-                    alert(JogadorAtual + " Virou jogador 2")
+                    JogadorAtual = 2;
+
                     textoJogadorAtual.innerHTML = nomeSegundoJogador;
                 }
                 else if(JogadorAtual == 2)
                 {
-                    JogadorAtual == 1;
-                    alert(JogadorAtual + " Virou jogador 1")
+                    JogadorAtual = 1;
+
                     textoJogadorAtual.innerHTML = nomePrimeiroJogador;
                 }
             }
