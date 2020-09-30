@@ -24,10 +24,6 @@ function NovoJogo()
     {
         nomePrimeiroJogador = "Jogador 1";
     }
-    else
-    {
-
-    }
 
     //Propt Pegar nome do Jogador 2
     nomeSegundoJogador = prompt("Por favor, coloque o nome do jogador 2:", "Jogador 2");
@@ -35,10 +31,6 @@ function NovoJogo()
     if(nomeSegundoJogador == null || nomeSegundoJogador == "" || nomeSegundoJogador == nomePrimeiroJogador)
     {
         nomeSegundoJogador = "Jogador 2";
-    }
-    else
-    {
-
     }
 
     //Jogador 1 é sempre o primeiro que joga!
@@ -149,14 +141,14 @@ function Jogada(numeroDaCasa)
                 //Troca de peça, e logo, de jogador
                 jogadorX = false;
 
-                if(JogadorAtual == 1)
-                {
-                    JogadorAtual = 2;
-                }
-                else if(JogadorAtual == 2)
-                {
-                    JogadorAtual = 1;
-                }
+                // if(JogadorAtual == 1)
+                // {
+                //     JogadorAtual = 2;
+                // }
+                // else if(JogadorAtual == 2)
+                // {
+                //     JogadorAtual = 1;
+                // }
             }
             else if(jogadorX == false)
             {
@@ -166,14 +158,14 @@ function Jogada(numeroDaCasa)
                 //Troca de peça, e logo, de jogador
                 jogadorX = true;
 
-                if(JogadorAtual == 1)
-                {
-                    JogadorAtual = 2;
-                }
-                else if(JogadorAtual == 2)
-                {
-                    JogadorAtual = 1;
-                }
+                // if(JogadorAtual == 1)
+                // {
+                //     JogadorAtual = 2;
+                // }
+                // else if(JogadorAtual == 2)
+                // {
+                //     JogadorAtual = 1;
+                // }
             }
 
             ChecarVitória(textoJogadorAtual);
@@ -192,10 +184,6 @@ function Jogada(numeroDaCasa)
         {
             alert("Essa casa já foi selecionada!");
         }
-    }
-    else
-    {
-
     }
 
 }
@@ -275,7 +263,14 @@ function ChecarVitória(nomeJogadorAtual)
     }
     else
     {
-
+        if(JogadorAtual == 1)
+        {
+            JogadorAtual = 2;
+        }
+        else if(JogadorAtual == 2)
+        {
+            JogadorAtual = 1;
+        }
     }
 }
 
@@ -286,7 +281,8 @@ function XWins(nomeJogadorAtual)
     textoJogadorAtual = document.getElementById("nome-jogador-atual");
     textoTurnoDe = document.getElementById("texto-guia");
 
-    textoTurnoDe.textContent = "Vitória de: " + nomeJogadorAtual.textContent;
+    textoTurnoDe.textContent = "Vitória de: ";
+    textoJogadorAtual.innerHTML = nomeJogadorAtual;
 }
 
 function OWins(nomeJogadorAtual)
@@ -296,7 +292,8 @@ function OWins(nomeJogadorAtual)
     textoJogadorAtual = document.getElementById("nome-jogador-atual");
     textoTurnoDe = document.getElementById("texto-guia");
 
-    textoTurnoDe.textContent = "Vitória de: " + nomeJogadorAtual.textContent;
+    textoTurnoDe.textContent = "Vitória de: ";
+    textoJogadorAtual.innerHTML = nomeJogadorAtual;
 }
 
 function Empate()
@@ -305,5 +302,5 @@ function Empate()
 
     textoTurnoDe = document.getElementById("texto-guia");
 
-    textoTurnoDe.textContent = "Vitória de: Ninguém!"
+    textoTurnoDe.textContent = "Vitória de: Ninguém!";
 }
