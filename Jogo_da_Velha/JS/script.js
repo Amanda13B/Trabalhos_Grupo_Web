@@ -75,6 +75,10 @@ function LimparCaixas()
         //Tirar os numeros do Array
         arrayCasas = [];
         arrayXO = ["-", "-", "-", "-", "-", "-", "-", "-", "-",];
+
+        textoTurnoDe = document.getElementById("texto-guia");
+
+        textoTurnoDe.innerHTML = "É a vez de: ";
     }
     else
     {
@@ -201,31 +205,27 @@ function ChecarVitória()
     alert(arrayXO);
 
     //Condicoes de Vitoria X
-    if(arrayXO[1] == "X" && arrayXO[2] == "X" && arrayXO[3] == "X")
+    if(arrayXO[0] == "X" && arrayXO[1] == "X" && arrayXO[2] == "X")
     {
         XWins();
     }
-    else if(arrayXO[1] == "X" && arrayXO[4] == "X" && arrayXO[7] == "X")
+    else if(arrayXO[0] == "X" && arrayXO[3] == "X" && arrayXO[6] == "X")
     {
         XWins();
     }
-    else if(arrayXO[1] == "X" && arrayXO[5] == "X" && arrayXO[9] == "X")
+    else if(arrayXO[0] == "X" && arrayXO[4] == "X" && arrayXO[8] == "X")
     {
         XWins();
     }
-    else if(arrayXO[3] == "X" && arrayXO[5] == "X" && arrayXO[7] == "X")
+    else if(arrayXO[2] == "X" && arrayXO[4] == "X" && arrayXO[6] == "X")
     {
         XWins();
     }
-    else if(arrayXO[7] == "X" && arrayXO[8] == "X" && arrayXO[9] == "X")
+    else if(arrayXO[6] == "X" && arrayXO[7] == "X" && arrayXO[8] == "X")
     {
         XWins();
     }
-    else if(arrayXO[4] == "X" && arrayXO[5] == "X" && arrayXO[6] == "X")
-    {
-        XWins();
-    }
-    else if(arrayXO[3] == "X" && arrayXO[6] == "X" && arrayXO[9] == "X")
+    else if(arrayXO[3] == "X" && arrayXO[4] == "X" && arrayXO[5] == "X")
     {
         XWins();
     }
@@ -233,33 +233,33 @@ function ChecarVitória()
     {
         XWins();
     }
+    else if(arrayXO[1] == "X" && arrayXO[4] == "X" && arrayXO[7] == "X")
+    {
+        XWins();
+    }
 
     //Condicoes de Vitoria O
-    else if(arrayXO[1] == "O" && arrayXO[2] == "O" && arrayXO[3] == "O")
+    else if(arrayXO[0] == "O" && arrayXO[1] == "O" && arrayXO[2] == "O")
     {
         OWins();
     }
-    else if(arrayXO[1] == "O" && arrayXO[4] == "O" && arrayXO[7] == "O")
+    else if(arrayXO[0] == "O" && arrayXO[3] == "O" && arrayXO[6] == "O")
     {
         OWins();
     }
-    else if(arrayXO[1] == "O" && arrayXO[5] == "O" && arrayXO[9] == "O")
+    else if(arrayXO[0] == "O" && arrayXO[4] == "O" && arrayXO[8] == "O")
     {
         OWins();
     }
-    else if(arrayXO[3] == "O" && arrayXO[5] == "O" && arrayXO[7] == "O")
+    else if(arrayXO[2] == "O" && arrayXO[4] == "O" && arrayXO[6] == "O")
     {
         OWins();
     }
-    else if(arrayXO[7] == "O" && arrayXO[8] == "O" && arrayXO[9] == "O")
+    else if(arrayXO[6] == "O" && arrayXO[7] == "O" && arrayXO[8] == "O")
     {
         OWins();
     }
-    else if(arrayXO[4] == "O" && arrayXO[5] == "O" && arrayXO[6] == "O")
-    {
-        OWins();
-    }
-    else if(arrayXO[3] == "O" && arrayXO[6] == "O" && arrayXO[9] == "O")
+    else if(arrayXO[3] == "O" && arrayXO[4] == "O" && arrayXO[5] == "O")
     {
         OWins();
     }
@@ -267,9 +267,17 @@ function ChecarVitória()
     {
         OWins();
     }
-    else
+    else if(arrayXO[1] == "O" && arrayXO[4] == "O" && arrayXO[7] == "O")
+    {
+        OWins();
+    }
+    else if(arrayCasas.length == 9)
     {
         Empate();
+    }
+    else
+    {
+
     }
 }
 
