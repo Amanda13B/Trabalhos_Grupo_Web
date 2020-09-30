@@ -286,7 +286,7 @@ function XWins(nomeJogadorAtual)
     textoJogadorAtual = document.getElementById("nome-jogador-atual");
     textoTurnoDe = document.getElementById("texto-guia");
 
-    textoTurnoDe.innerHTML = "Vitória de: " + nomeJogadorAtual.innerHTML;
+    textoTurnoDe.textContent = "Vitória de: " + nomeJogadorAtual.textContent;
 }
 
 function OWins(nomeJogadorAtual)
@@ -296,16 +296,14 @@ function OWins(nomeJogadorAtual)
     textoJogadorAtual = document.getElementById("nome-jogador-atual");
     textoTurnoDe = document.getElementById("texto-guia");
 
-    textoTurnoDe.innerHTML = "Vitória de: " + nomeJogadorAtual.innerHTML;
+    textoTurnoDe.textContent = "Vitória de: " + nomeJogadorAtual.textContent;
 }
 
 function Empate()
 {
     podeJogar = false;
 
-    textoJogadorAtual = document.getElementById("nome-jogador-atual");
     textoTurnoDe = document.getElementById("texto-guia");
 
-    textoTurnoDe.innerHTML = "Vitória de: "
-    textoJogadorAtual = "Ninguém!"
+    textoTurnoDe.textContent = "Vitória de: Ninguém!"
 }
