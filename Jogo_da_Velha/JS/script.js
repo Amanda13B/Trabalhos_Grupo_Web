@@ -3,12 +3,14 @@ let nomeSegundoJogador;
 
 let JogadorAtual = 1;
 let textoJogadorAtual;
+let textoTurnoDe;
 
 let jogadorX = true;
 
 let podeJogar = false;
 
 let arrayCasas = [];
+let arrayXO = ["-", "-", "-", "-", "-", "-", "-", "-", "-",];
 
 function NovoJogo()
 {
@@ -28,7 +30,7 @@ function NovoJogo()
     }
 
     //Propt Pegar nome do Jogador 2
-    var nomeSegundoJogador = prompt("Por favor, coloque o nome do jogador 2:", "Jogador 2");
+    nomeSegundoJogador = prompt("Por favor, coloque o nome do jogador 2:", "Jogador 2");
 
     if(nomeSegundoJogador == null || nomeSegundoJogador == "" || nomeSegundoJogador == nomePrimeiroJogador)
     {
@@ -72,6 +74,7 @@ function LimparCaixas()
 
         //Tirar os numeros do Array
         arrayCasas = [];
+        arrayXO = ["-", "-", "-", "-", "-", "-", "-", "-", "-",];
     }
     else
     {
@@ -99,18 +102,33 @@ function Jogada(numeroDaCasa)
                 }
             }
 
-            if(casaRepetida)
-            {
-
-            }
-            else
+            if(!casaRepetida)
             {
                 arrayCasas.push(numeroDaCasa);
+
+                if(jogadorX)
+                {
+                    arrayXO[numeroDaCasa] = "X";
+                }
+                else
+                {
+                    arrayXO[numeroDaCasa] = "O";
+                }
+                
             }
         }
         else 
         {
             arrayCasas.push(numeroDaCasa);
+
+            if(jogadorX)
+            {
+                arrayXO[numeroDaCasa] = "X";
+            }
+            else
+            {
+                arrayXO[numeroDaCasa] = "O";
+            }
         }    
 
         //Caso não seja repetida a casa escolhida
@@ -130,14 +148,10 @@ function Jogada(numeroDaCasa)
                 if(JogadorAtual == 1)
                 {
                     JogadorAtual = 2;
-                    
-                    textoJogadorAtual.innerHTML = nomeSegundoJogador;
                 }
                 else if(JogadorAtual == 2)
                 {
                     JogadorAtual = 1;
-
-                    textoJogadorAtual.innerHTML = nomePrimeiroJogador;
                 }
             }
             else if(jogadorX == false)
@@ -151,16 +165,24 @@ function Jogada(numeroDaCasa)
                 if(JogadorAtual == 1)
                 {
                     JogadorAtual = 2;
-
-                    textoJogadorAtual.innerHTML = nomeSegundoJogador;
                 }
                 else if(JogadorAtual == 2)
                 {
                     JogadorAtual = 1;
-
-                    textoJogadorAtual.innerHTML = nomePrimeiroJogador;
                 }
             }
+
+            if(JogadorAtual == 1)
+            {
+                textoJogadorAtual.innerHTML = nomePrimeiroJogador;
+            }
+            else
+            {
+                textoJogadorAtual.innerHTML = nomeSegundoJogador;
+            }
+
+            ChecarVitória();
+
         }
         else
         {
@@ -172,4 +194,112 @@ function Jogada(numeroDaCasa)
 
     }
 
+}
+
+function ChecarVitória()
+{
+    alert(arrayXO);
+
+    //Condicoes de Vitoria X
+    if(arrayXO[1] == "X" && arrayXO[2] == "X" && arrayXO[3] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[1] == "X" && arrayXO[4] == "X" && arrayXO[7] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[1] == "X" && arrayXO[5] == "X" && arrayXO[9] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[3] == "X" && arrayXO[5] == "X" && arrayXO[7] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[7] == "X" && arrayXO[8] == "X" && arrayXO[9] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[4] == "X" && arrayXO[5] == "X" && arrayXO[6] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[3] == "X" && arrayXO[6] == "X" && arrayXO[9] == "X")
+    {
+        XWins();
+    }
+    else if(arrayXO[2] == "X" && arrayXO[5] == "X" && arrayXO[8] == "X")
+    {
+        XWins();
+    }
+
+    //Condicoes de Vitoria O
+    else if(arrayXO[1] == "O" && arrayXO[2] == "O" && arrayXO[3] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[1] == "O" && arrayXO[4] == "O" && arrayXO[7] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[1] == "O" && arrayXO[5] == "O" && arrayXO[9] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[3] == "O" && arrayXO[5] == "O" && arrayXO[7] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[7] == "O" && arrayXO[8] == "O" && arrayXO[9] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[4] == "O" && arrayXO[5] == "O" && arrayXO[6] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[3] == "O" && arrayXO[6] == "O" && arrayXO[9] == "O")
+    {
+        OWins();
+    }
+    else if(arrayXO[2] == "O" && arrayXO[5] == "O" && arrayXO[8] == "O")
+    {
+        OWins();
+    }
+    else
+    {
+        Empate();
+    }
+}
+
+function XWins()
+{
+    podeJogar = false;
+
+    textoJogadorAtual = document.getElementById("nome-jogador-atual");
+    textoTurnoDe = document.getElementById("texto-guia");
+
+    textoTurnoDe.innerHTML = "Vitória de: "
+}
+
+function OWins()
+{
+    podeJogar = false;
+
+    textoJogadorAtual = document.getElementById("nome-jogador-atual");
+    textoTurnoDe = document.getElementById("texto-guia");
+
+    textoTurnoDe.innerHTML = "Vitória de: "
+}
+
+function Empate()
+{
+    podeJogar = false;
+
+    textoJogadorAtual = document.getElementById("nome-jogador-atual");
+    textoTurnoDe = document.getElementById("texto-guia");
+
+    textoTurnoDe.innerHTML = "Vitória de: "
+    textoJogadorAtual = "Ninguém!"
 }
